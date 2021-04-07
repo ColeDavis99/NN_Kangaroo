@@ -14,10 +14,10 @@ import matplotlib.pyplot as plt
 
 #Create another tensorflow network object to predict what is in the image
 options = {
-    'model': 'cfg/tiny-yolo.cfg',
+    'model': 'cfg/tiny-yolo-voc-1c.cfg',
     
     'backup': 'ckpt/',
-    'load': 16000,                    #Which training checkpoint should this model be loaded from (needs something like tiny-yolo-10.meta to work)
+    'load': -1,                    #Which training checkpoint should this model be loaded from (needs something like tiny-yolo-10.meta to work)
     
     'threshold': 0.0001,   #0.3 default confidence
     # 'gpu': 0.45

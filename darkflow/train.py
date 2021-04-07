@@ -12,11 +12,11 @@ import matplotlib.pyplot as plt
 ##########################################
 '''
 #Some variables for training the model
-options = {"model": "cfg/tiny-yolo.cfg", 
-           "load": "bin/yolov2-tiny-voc.weights",  #Start training on original model
-           #"load": -1,  #Resume loading from most recently trained weights
-           "batch": 1,  #Oringially 2
-           "epoch": 20000,   #Originally 5
+options = {"model": "cfg/tiny-yolo-voc-1c.cfg",     #Training the 1 class model     
+           "load": "bin/yolov2-tiny-voc.weights",   #Start training on original weights
+           #"load": -1,     #Resume loading from most recently trained weights
+           "batch": 1,      #Oringially 2
+           "epoch": 100,    #Originally 5
            "train": True,
            "annotation": "../Kangaroo/annots/",
            "dataset": "../Kangaroo/images/",
