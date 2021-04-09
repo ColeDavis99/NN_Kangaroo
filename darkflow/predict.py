@@ -14,12 +14,12 @@ import matplotlib.pyplot as plt
 
 #Create another tensorflow network object to predict what is in the image
 options = {
-    'model': 'cfg/tiny-yolo-voc-1c.cfg',
+    'model': 'cfg/model_608_coco/yolov2-1c.cfg',
     
     'backup': 'ckpt/',
-    'load': -1,                    #Which training checkpoint should this model be loaded from (needs something like tiny-yolo-10.meta to work)
+    'load': -1,           #Which training checkpoint should this model be loaded from (needs something like tiny-yolo-10.meta to work)
     
-    'threshold': 0.0001,   #0.3 default confidence
+    'threshold': 0.03,   #0.3 default confidence
     # 'gpu': 0.45
 }
 
@@ -36,10 +36,13 @@ options = {
 
 #This loads pre-trained parameters from the checkpoint that we just specified in options.
 tfnetPredict = TFNet(options)
-
+tfnetPredict.load_from_ckpt()
 
 #We will take one of the images that has not been used for training to predict the class, bounding box and confidence
-original_img = cv2.imread("testimg.jpg")
+#original_img = cv2.imread("testimg1.jpg")
+original_img = cv2.imread("testimg2.jpg")
+# original_img = cv2.imread("testimg4.jpg")
+
 original_img = cv2.cvtColor(original_img, cv2.COLOR_BGR2RGB)
 result = tfnetPredict.return_predict(original_img)
 print(result)

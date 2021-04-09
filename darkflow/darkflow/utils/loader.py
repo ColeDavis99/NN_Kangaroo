@@ -120,7 +120,7 @@ class weights_walker(object):
             self.transpose = major > 1000 or minor > 1000
             
             #3-30-21 The old self.offset value was originally 16. It should be equal to this:   self.offset = old_offset_value + (found_value — expected_value)    found_value and expected_value are from the error message if one is received.
-            self.offset = 20 + (63471556 - 63082060)
+            self.offset = 20 + (203934260 - 202314764)
 
     def walk(self, size):
         if self.eof: return None

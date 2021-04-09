@@ -12,15 +12,20 @@ import matplotlib.pyplot as plt
 ##########################################
 '''
 #Some variables for training the model
-options = {"model": "cfg/tiny-yolo-voc-1c.cfg",     #Training the 1 class model     
-           "load": "bin/yolov2-tiny-voc.weights",   #Start training on original weights
-           #"load": -1,     #Resume loading from most recently trained weights
-           "batch": 1,      #Oringially 2
-           "epoch": 100,    #Originally 5
-           "train": True,
-           "annotation": "../Kangaroo/annots/",
-           "dataset": "../Kangaroo/images/",
-           "gpu": 1.0
+options = { "model": "cfg/model_608_coco/yolov2-1c.cfg",     #Training the 1 class model     
+            "load": "bin/yolov2-coco-608x608.weights",   #Start training on original weights
+            # "load": -1,     #Resume loading from most recently trained weights
+            "batch": 8,      #Oringially 2
+            "epoch": 100,     #Originally 5
+            "train": True,
+
+            "annotation": "../Soccerball/annots/",
+            "dataset": "../Soccerball/images/",
+            #  "annotation": "../Kangaroo/annots/",
+            #  "dataset": "../Kangaroo/images/",
+            "gpu": 1.0,
+            "save": 256       # save/batch is how many steps the model saves. 
+
 }
 
 #Create a tensorflow network object
