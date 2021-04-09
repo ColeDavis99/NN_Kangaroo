@@ -31,8 +31,6 @@ options = { "model": "cfg/model_608_coco/yolov2-1c.cfg",     #Training the 1 cla
 #Create a tensorflow network object
 tfnetTrain = TFNet(options)
 
-#106.0 is the starting loss, so adjust epoch and stuff accordingly
-#Goes down by around 13 every 5 epochs
 #Train the model with the options it was created with
 tfnetTrain.train()
 

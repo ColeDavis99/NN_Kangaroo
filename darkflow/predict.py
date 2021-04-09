@@ -23,16 +23,6 @@ options = {
     # 'gpu': 0.45
 }
 
-#This gets us kangarOOH everywhere
-# options = {
-#     'model': 'cfg/tiny-yolo.cfg',
-#     'backup': 'ckpt/',
-#     'load': 10690,                    #Which training checkpoint should this model be loaded from?
-#     #'load': 'cfg/tiny-yolo.cfg',            #Maybe this will do something?
-#     'threshold': 0.0001,   #0.3 default confidence
-#     'gpu': 0.45
-# }
-
 
 #This loads pre-trained parameters from the checkpoint that we just specified in options.
 tfnetPredict = TFNet(options)
